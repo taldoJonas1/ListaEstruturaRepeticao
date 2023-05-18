@@ -1,14 +1,37 @@
-
-function mediaIdades(){
-    let conta = 1
-    let soma = 0
-    let qtde = Number(prompt('Informe qtde'))
-    while (conta <= qtde){
-        let idade = Number(prompt('Informe uma idade'))
-        conta = conta + 1 // incremento
-        soma = soma + idade
+function exe1(){
+    let conta = 1; let conta2 = 1
+    let A, B, C, D, aux
+    while (conta2 <= 5){
+        A = Number(prompt('Informe A'))
+        B = Number(prompt('Informe B'))
+        C = Number(prompt('Informe C'))
+        D = Number(prompt('Informe D'))
+        let conta = 1
+        while (conta <= 4){
+            if (A>B) { aux = A; A = B; B = aux;}
+            if (B>C) { aux = B; B = C; C = aux;}
+            if (C>D) { aux = C; C = D; D = aux;}
+            conta++
+        }
+        alert(`Crescente ${A}, ${B}, ${C} e ${D}`)
+        alert(`Decrescente ${D}, ${C}, ${B} e ${A}`)
+        conta2++
     }
-    alert("A média das idades é " + soma / qtde)
+}
+
+function exe2(){
+    let preco = 5.0; let qtde = 120; 
+    const desconto = 200;
+    let saida = "<table border='1'> <tr> <th> Preço </th> <th> Qtde </th> <th> Desconto </th> <th> Lucro </th> </tr>"
+    while (preco >= 1){
+        lucro = (preco * qtde) - desconto
+        saida += `<tr> <td> ${preco} </td> <td> ${qtde} </td> <td> ${desconto} </td> <td> ${lucro} </td> </tr>`
+        preco = preco - 0.50
+        qtde = qtde + 26
+
+    }
+    saida += "</table>"
+    document.getElementById("tabela").innerHTML = saida
 }
 
 function exe3(){
@@ -67,41 +90,7 @@ function exe5(){
     }
 }
 
-function exe1(){
-    let conta = 1; let conta2 = 1
-    let A, B, C, D, aux
-    while (conta2 <= 5){
-        A = Number(prompt('Informe A'))
-        B = Number(prompt('Informe B'))
-        C = Number(prompt('Informe C'))
-        D = Number(prompt('Informe D'))
-        let conta = 1
-        while (conta <= 4){
-            if (A>B) { aux = A; A = B; B = aux;}
-            if (B>C) { aux = B; B = C; C = aux;}
-            if (C>D) { aux = C; C = D; D = aux;}
-            conta++
-        }
-        alert(`Crescente ${A}, ${B}, ${C} e ${D}`)
-        alert(`Decrescente ${D}, ${C}, ${B} e ${A}`)
-        conta2++
-    }
-}
 
-function exe2(){
-    let preco = 5.0; let qtde = 120; 
-    const desconto = 200;
-    let saida = "<table border='1'> <tr> <th> Preço </th> <th> Qtde </th> <th> Desconto </th> <th> Lucro </th> </tr>"
-    while (preco >= 1){
-        lucro = (preco * qtde) - desconto
-        saida += `<tr> <td> ${preco} </td> <td> ${qtde} </td> <td> ${desconto} </td> <td> ${lucro} </td> </tr>`
-        preco = preco - 0.50
-        qtde = qtde + 26
-
-    }
-    saida += "</table>"
-    document.getElementById("tabela").innerHTML = saida
-}
 
 function exe6(){
     let codigo
@@ -130,12 +119,12 @@ function exe6(){
 
 function exe20() {
     let opcao
-    let n1 = Number (document.getElementById(n1).value)
-    let n2 = Number (document.getElementById(n2).value)
-    let n3 = Number (document.getElementById(n3).value)
-    let p1 = Number (document.getElementById(p1).value)
-    let p2 = Number (document.getElementById(p2).value)
-    let p3 = Number (document.getElementById(p3).value)
+    let n1
+    let n2
+    let n3
+    let p1
+    let p2
+    let p3
     let media
 
     do {
