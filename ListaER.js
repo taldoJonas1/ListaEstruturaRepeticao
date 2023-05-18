@@ -127,3 +127,40 @@ function exe6(){
     let valorParcela = totalPrazo / 3
     document.getElementById("result6").innerHTML = `Total à vista ${totalVista} Total à prazo ${totalPrazo} Total ${total} Primeira parcela ${valorParcela.toFixed(2)}`
 }
+
+function exe20() {
+    let opcao
+    let n1 = Number (document.getElementById(n1).value)
+    let n2 = Number (document.getElementById(n2).value)
+    let n3 = Number (document.getElementById(n3).value)
+    let p1 = Number (document.getElementById(p1).value)
+    let p2 = Number (document.getElementById(p2).value)
+    let p3 = Number (document.getElementById(p3).value)
+    let media
+
+    do {
+        opcao = Number (prompt("Menu de opções. \n1. Média aritimetica \n2. Média ponderada \n3. Sair"))
+        switch (opcao) {
+            case 1: alert("Opção 1 escolhida.")
+            n1 = Number (prompt("Entre com a nota 1: "))
+            n2 = Number (prompt("Entre com a nota 2: "))
+            n3 = Number (prompt("Entre com a nota 3: "))
+            media = ((n1 + n2 + n3)/3)
+            alert(`A média do aluno foi ${media}`); break
+
+            case 2: alert("Opção 2 escolhida.")
+            n1 = Number (prompt("Entre com a nota 1: "))
+            p1 = Number (prompt("Entre com o peso da nota 1: "))
+            n2 = Number (prompt("Entre com a nota 2: "))
+            p2 = Number (prompt("Entre com o peso da nota 2: "))
+            n3 = Number (prompt("Entre com a nota 3: "))
+            p3 = Number (prompt("Entre com o peso da nota 3: "))
+            media = (((n1 * p1) + (n2 * p2) + (n3 * p3))/(p1 + p2 + p3))
+            alert(`A média do aluno foi ${media}`); break
+
+            case 3: alert("Programa encerrado"); break
+
+            default: alert("Opção inválida")
+        }
+    } while (opcao != 3)
+}
