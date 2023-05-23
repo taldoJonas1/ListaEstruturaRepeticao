@@ -293,10 +293,14 @@ function exe23() {
                     meses = Number (prompt(`Informe os meses.`))
                     if ((meses >= 1) && (meses <= 12)) {
                         dt = salario + salario*meses/12
-                        alert
+                        alert(`Décimo terceiro: ${dt}`)
                     }
-            case 4: 
+                    else {
+                        alert(`Nro de meses inválido`)
+                    }
+                    break
+            case 4: alert(`Programa encerrado.`); break
             default: alert(`Opção inválida.`)
         }
-    }
+    } while (opcao != 4)
 }
