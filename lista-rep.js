@@ -236,3 +236,67 @@ function exe20() {
         }
     } while (opcao != 3)
 }
+
+function exe21() {
+    let cand1 = 0, cand2 = 0, cand3 = 0, cand4 = 0, nulos = 0, brancos = 0
+    let total, opcao
+    
+    do {
+        opcao = Number (prompt('Escolha uma opção:  \nCandidato 1 = 1 \nCandidato 2 = 2 \nCandidato 3 = 3 \nCandidato 4 = 4 \nNulo = 5 \nBranco = 6 \nSair do programa = 0'))
+        switch (opcao) {
+            case 1: cand1++; break
+            case 2: cand2++; break
+            case 3: cand3++; break
+            case 4: cand4++; break
+            case 5: nulos++; break
+            case 6: brancos++; break
+            case 0: alert("Votação encerrada.")
+            default: alert("Opção inválida.")
+        }
+    } while (opcao != 0)
+
+    total = cand1 + cand2 + cand3 + cand4 + nulos + brancos
+    if (total > 0){
+        alert(`${nulos/total*100}% de votos nulos.`)
+        alert(`${brancos/total*100}% de votos brancos.`)
+    }
+    else {
+        alert(`Nenhum voto computado.`)
+    }
+}
+
+function exe23() {
+    let salario, novo, ferias, dt, meses, opcao
+
+    do {
+        opcao = Number (prompt(`Escolha uma opção: \n1. Novo salário \n2. Férias \n3. Décimo Terceiro \n4. Sair`))
+        switch (opcao){
+            case 1: salario = Number (prompt(`Informe o salário.`))
+            if ((salario >= 0) && (salario < 210)){
+                novo = salario + salario*0.15
+            }
+            else if ((salario >= 210) && (salario <= 600)){
+                novo = salario + salario*0.1
+            }
+            else if (salario > 600){
+                novo = salario + salario*0.05
+            }
+            else{
+                alert(`Salário negativo`); break
+            }
+            alert(`O novo salário será ${novo}`); break
+
+            case 2: salario = Number (prompt(`Informe o salário.`))
+            ferias = salario + salario*0.33
+
+            case 3: salario = Number (prompt(`Informe o salário.`))
+                    meses = Number (prompt(`Informe os meses.`))
+                    if ((meses >= 1) && (meses <= 12)) {
+                        dt = salario + salario*meses/12
+                        alert
+                    }
+            case 4: 
+            default: alert(`Opção inválida.`)
+        }
+    }
+}
